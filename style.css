@@ -47,14 +47,17 @@ html, body {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
   font-size: 14.5px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
 }
 
-h1, h2, h3, .brand-text, .promo-title {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+h1, h2, h3, .brand-text {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 a {
@@ -316,8 +319,8 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  margin: 18px 0 24px;
+  gap: 12px;
+  margin: 20px 0 28px;
 }
 
 .btn {
@@ -325,54 +328,91 @@ p {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 28px;
+  padding: 13px 32px 14px;
   border-radius: var(--radius-pill);
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 15px;
+  letter-spacing: 0.01em;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
   border: none;
-  transition: var(--transition);
   box-sizing: border-box;
   max-width: 100%;
+  position: relative;
 }
 
 .btn ion-icon {
-  font-size: 17px;
+  font-size: 18px;
   flex-shrink: 0;
 }
 
+/* Smooth 3D Gold Primary Button */
 .btn-primary {
-  background: linear-gradient(180deg, #e8c674 0%, #c99638 100%);
-  color: #171106;
-  box-shadow: 0 3px 10px rgba(201, 150, 56, 0.3);
+  background: linear-gradient(180deg, #f0cf7e 0%, #dda845 55%, #c68e2f 100%);
+  color: #171004;
+  box-shadow: 
+    0 4px 14px rgba(0, 0, 0, 0.35),
+    0 2px 5px rgba(216, 168, 78, 0.25),
+    0 2.5px 0 #976b1e,
+    inset 0 1px 0.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.12);
+  text-shadow: 0 0.5px 0 rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(216, 168, 78, 0.5);
+  border-bottom-color: #835c16;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(180deg, #f0d287 0%, #d4a34b 100%);
-  transform: translateY(-1px);
+  background: linear-gradient(180deg, #f7d98d 0%, #e5b351 55%, #d19939 100%);
+}
+
+.btn-primary:active {
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.35),
+    0 1px 0 #976b1e,
+    inset 0 1px 1px rgba(0, 0, 0, 0.15);
+  transform: translateY(1.5px);
 }
 
 .cta-note {
-  color: var(--text-dim);
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 500;
-  margin: 4px 0;
+  letter-spacing: -0.01em;
+  margin: 2px 0;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.45;
+  max-width: 320px;
 }
 
+/* Smooth 3D Telegram Secondary Button */
 .btn-secondary {
-  background: #4fa3d1;
-  color: #0b171e;
-  box-shadow: 0 3px 10px rgba(79, 163, 209, 0.25);
-  font-size: 14.5px;
+  background: linear-gradient(180deg, #48bcf7 0%, #299bd6 55%, #187fb7 100%);
+  color: #ffffff;
+  box-shadow: 
+    0 4px 14px rgba(0, 0, 0, 0.35),
+    0 2px 5px rgba(41, 155, 214, 0.25),
+    0 2.5px 0 #115e88,
+    inset 0 1px 0.5px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  text-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(72, 188, 247, 0.45);
+  border-bottom-color: #0e4c6e;
 }
 
 .btn-secondary:hover {
-  background: #62b5e2;
-  transform: translateY(-1px);
+  background: linear-gradient(180deg, #5ec5fa 0%, #35a5de 55%, #208bc4 100%);
+}
+
+.btn-secondary:active {
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.35),
+    0 1px 0 #115e88,
+    inset 0 1px 1px rgba(0, 0, 0, 0.15);
+  transform: translateY(1.5px);
 }
 
 /* ==========================================================================
@@ -546,7 +586,6 @@ p {
 
 .step-item:hover {
   border-color: rgba(216, 168, 78, 0.35);
-  transform: translateX(2px);
 }
 
 .step-number {
@@ -579,13 +618,13 @@ p {
 }
 
 /* ==========================================================================
-   Table (Mobile First)
+   Table (Mobile First - Prominent Borders)
    ========================================================================== */
 .table-wrap {
   width: 100%;
-  margin: 14px 0 18px;
+  margin: 16px 0 22px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
+  border: 2px solid #555555;
   background: var(--surface-input);
   overflow: hidden;
 }
@@ -599,28 +638,25 @@ table {
 
 thead th {
   background: var(--surface-input);
-  color: var(--text-dim);
+  color: var(--gold-light);
   font-weight: 700;
-  border-bottom: 1px solid var(--border);
-  font-size: 13.5px;
+  font-size: 14px;
+  border-bottom: 2px solid #555555;
+  letter-spacing: 0.3px;
 }
 
 th, td {
   padding: 12px 14px;
   text-align: left;
-  border-bottom: 1px solid var(--border-subtle);
+  border: 1px solid #4a4a4a;
   background: var(--surface-input);
 }
 
-tr:last-child th,
-tr:last-child td {
-  border-bottom: none;
-}
-
 th {
-  color: var(--text-dim);
+  color: var(--text-muted);
   font-weight: 600;
-  width: 45%;
+  width: 42%;
+  border-right: 1px solid #4a4a4a;
 }
 
 td {
@@ -628,19 +664,19 @@ td {
 }
 
 .td-highlight {
-  font-weight: 600;
-  color: var(--text);
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .badge-size {
   display: inline-block;
   background: var(--surface-header);
   color: var(--text);
-  padding: 2px 6px;
+  padding: 3px 8px;
   border-radius: 4px;
-  font-size: 11.5px;
-  font-weight: 500;
-  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #555555;
 }
 
 .bonus-highlight {
