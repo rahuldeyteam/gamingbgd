@@ -594,12 +594,22 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13.5px;
+  background: var(--surface-input);
+}
+
+thead th {
+  background: var(--surface-input);
+  color: var(--text-dim);
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  font-size: 13.5px;
 }
 
 th, td {
-  padding: 11px 14px;
+  padding: 12px 14px;
   text-align: left;
   border-bottom: 1px solid var(--border-subtle);
+  background: var(--surface-input);
 }
 
 tr:last-child th,
@@ -608,7 +618,6 @@ tr:last-child td {
 }
 
 th {
-  background: rgba(0, 0, 0, 0.2);
   color: var(--text-dim);
   font-weight: 600;
   width: 45%;
@@ -616,7 +625,6 @@ th {
 
 td {
   color: var(--text);
-  background: var(--surface-input);
 }
 
 .td-highlight {
@@ -626,7 +634,7 @@ td {
 
 .badge-size {
   display: inline-block;
-  background: var(--surface);
+  background: var(--surface-header);
   color: var(--text);
   padding: 2px 6px;
   border-radius: 4px;
