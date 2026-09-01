@@ -493,6 +493,92 @@ p {
 }
 
 /* ==========================================================================
+   Registration Guide Section
+   ========================================================================== */
+.guide-section {
+  margin: 28px 0 32px;
+}
+
+.guide-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 18px;
+}
+
+.guide-screenshot-wrap {
+  width: 100%;
+  max-width: 280px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  background: var(--surface-input);
+  display: flex;
+  justify-content: center;
+}
+
+.guide-screenshot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.guide-steps {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--surface-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  transition: var(--transition);
+}
+
+.step-item:hover {
+  border-color: rgba(216, 168, 78, 0.35);
+  transform: translateX(2px);
+}
+
+.step-number {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--gold-btn-start), var(--gold-btn-mid));
+  color: #171106;
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-content h4 {
+  margin: 0 0 3px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.step-content p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
    Table (Mobile First)
    ========================================================================== */
 .table-wrap {
@@ -774,6 +860,22 @@ td {
 
   .feature-card {
     padding: 20px;
+  }
+
+  /* Guide Container on Laptop */
+  .guide-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .guide-screenshot-wrap {
+    max-width: 320px;
+    flex-shrink: 0;
+  }
+
+  .guide-steps {
+    flex: 1;
   }
 
   .promo-banner {
